@@ -1,0 +1,55 @@
+.navbar {
+    width: rem(80px);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #1c1c26;
+    padding-top: 1rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.link {
+    width: rem(50px);
+    height: rem(50px);
+    border-radius: var(--mantine-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+
+    &:hover {
+        filter: brightness(200%);
+    }
+
+    &[data-active] {
+
+        &,
+        &:hover {
+            background-color: #17171e;
+            filter: brightness(200%);
+        }
+    }
+}
+
+
+.navbarMain {
+    flex: 1;
+    margin-top: rem(20px);
+    overflow-y: auto;
+    transform: scale(0.9);
+}
+
+.navbarMain::-webkit-scrollbar {
+    display: none;
+}
+
+.navbarLast {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
