@@ -1,4 +1,5 @@
 import { NavbarMinimal } from "../components/NavbarMinimal";
+import { Remover } from "../components/Remover";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -6,7 +7,7 @@ export default function Home() {
     <>
       <div className={styles["main-box"]}>
         <NavbarMinimal />
-        <div>RIGHT</div>
+        <Remover />
       </div>
     </>
   );
