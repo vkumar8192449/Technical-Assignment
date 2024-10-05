@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
+import { useState, useEffect } from "react";
 import { Center, Tooltip, UnstyledButton, Stack, rem } from "@mantine/core";
 import classes from "./NavbarMinimal.module.css";
 import {
@@ -16,62 +17,71 @@ import {
   Support,
 } from "./icons";
 
-function NavbarLink({ icon: Icon, label, active, onClick }) {
+function NavbarLink({ icon: Icon, active, onClick }) {
   return (
-    <Tooltip label={label} position="right" transitionProps={{ duration: 0 }}>
-      <UnstyledButton
-        onClick={onClick}
-        className={classes.link}
-        data-active={active || undefined}
-      >
-        <Icon style={{ width: rem(20), height: rem(20) }} stroke={1.5} />
-      </UnstyledButton>
-    </Tooltip>
+    <UnstyledButton
+      onClick={onClick}
+      className={classes.link}
+      data-active={active || undefined}
+    >
+      <Icon style={{ width: rem(20), height: rem(20) }} stroke={1.5} />
+    </UnstyledButton>
   );
 }
 
 const mockdata = [
-  { icon: remover, label: "Remover" },
-  { icon: SplitterIcon, label: "Splitter" },
-  { icon: Pitcher, label: "Pitcher" },
-  { icon: Bpm, label: "Key BPM Finder" },
-  { icon: Cutter, label: "Cutter" },
-  { icon: Direct, label: "Joiner" },
-  { icon: Mike, label: "Recorder" },
-  { icon: Karaoke, label: "Karaoke" },
+  { icon: remover, label: "Remover", url: "/" },
+  { icon: SplitterIcon, label: "Splitter", url: "/splitter-ai" },
+  { icon: Pitcher, label: "Pitcher", url: "/pitch" },
+  { icon: Bpm, label: "Key BPM Finder", url: "/key-bpm-finder" },
+  { icon: Cutter, label: "Cutter", url: "/cutter" },
+  { icon: Direct, label: "Joiner", url: "/joiner" },
+  { icon: Mike, label: "Recorder", url: "/voice-recorder" },
+  { icon: Karaoke, label: "Karaoke", url: "/karaoke" },
 ];
 
 export function NavbarMinimal() {
-  const [active, setActive] = useState(2);
+  const [active, setActive] = useState(0);
 
   const links = mockdata.map((link, index) => (
-    <div
-      key={link.label}
-      style={{
-        marginBottom: "1rem",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
-      <NavbarLink
-        icon={link.icon}
-        label={link.label}
-        active={index === active}
-        onClick={() => setActive(index)}
-      />
-      <p
+    <Link href={link.url} style={{ textDecoration: "none" }}>
+      <div
+        key={link.label}
         style={{
-          color: index === active ? "#fff" : "#474751",
-          fontSize: "0.85rem",
-          filter: index === active ? "brightness(200%)" : "none",
-          textAlign: "center",
+          marginBottom: "1rem",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
-        {link.label}
-      </p>
-    </div>
+        <NavbarLink
+          icon={link.icon}
+          label={link.label}
+          active={index === active}
+          onClick={() => setActive(index)}
+        />
+        <p
+          onClick={() => setActive(index)}
+          style={{
+            color: index === active ? "#fff" : "#474751",
+            fontSize: "0.85rem",
+            filter: index === active ? "brightness(200%)" : "none",
+            textAlign: "center",
+          }}
+        >
+          {link.label}
+        </p>
+      </div>
+    </Link>
   ));
+
+  useEffect(() => {
+    for (let i = 0; i < mockdata.length; i++) {
+      if (window.location.href.includes(mockdata[i].url)) {
+        setActive(i);
+      }
+    }
+  }, []);
 
   return (
     <>
@@ -111,7 +121,9 @@ export function NavbarMinimal() {
 
         <div className={classes.navbarLast}>
           <Stack justify="center" gap={0}>
-            <NavbarLink icon={Support} label="support" />
+            <Link href="/support">
+              <NavbarLink icon={Support} label="support" />
+            </Link>
             <div style={{ transform: "scale(0.55)" }}>
               <NavbarLink icon={Flag} label="Logout" />
             </div>

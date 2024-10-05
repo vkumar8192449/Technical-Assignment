@@ -1,6 +1,9 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import '@mantine/core/styles.css';
+import { NavbarMinimal } from "@/components/NavbarMinimal";
+import styles from "./page.module.css";
+
 
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 
@@ -27,7 +30,12 @@ export default function RootLayout({ children }) {
         <ColorSchemeScript />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <MantineProvider>{children}</MantineProvider>
+        <MantineProvider>
+          <div className={styles["main-box"]}>
+            <NavbarMinimal />
+            {children}
+          </div>
+        </MantineProvider>
       </body>
     </html>
   );
