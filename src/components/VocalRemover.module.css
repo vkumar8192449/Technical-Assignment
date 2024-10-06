@@ -3,6 +3,7 @@
     background-color: #17171e;
     overflow-y: scroll;
     width: 100vw;
+    height: 100vh;
 }
 
 .splitter {
@@ -139,4 +140,171 @@
 
 .hrtag {
     border: 0.005rem solid #262633;
+}
+
+.clearButton {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.clearButton:hover {
+    color: rgb(112, 105, 105);
+}
+
+.waveform {
+    margin: 20px auto;
+    width: 100%;
+    height: 120px;
+    background: #1e1e28;
+    border-radius: 12px;
+    border: 1px solid #665dc3;
+}
+
+.timeDisplay {
+    display: flex;
+    justify-content: space-between;
+    color: #999999;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.controlBar {
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.playPauseButton,
+.cutButton,
+.removeButton,
+.undoButton,
+.redoButton {
+    margin-left: 0.5rem;
+    background-color: #1c1c26;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playPauseButton:hover,
+.cutButton:hover,
+.removeButton:hover,
+.undoButton:hover,
+.redoButton:hover {
+    background-color: #444;
+}
+
+.saveSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    border-top: 1px solid #262633;
+    position: absolute;
+    bottom: 0;
+    left: rem(80px);
+    right: 0;
+    padding: 1rem 3rem;
+}
+
+.formatLabel {
+    margin-right: 10px;
+}
+
+.formatSelect {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.saveButton {
+    background-color: #d3d3df;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 1rem;
+}
+
+.saveButton:hover {
+    background-color: #9b9ba6;
+}
+
+.audioEditor {
+    margin: 0 auto;
+    margin: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.playPauseButton,
+.saveButton {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border-radius: 22px;
+}
+
+.formatContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.formatButton {
+    color: #c8c8d3;
+    padding: 8px 16px;
+    border-radius: 25px;
+    border: 1px solid #3a3a3a;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+}
+
+.selectedFormat {
+    color: #00ff7f;
+    margin-left: 5px;
+}
+
+.dropdownMenu {
+    position: absolute;
+    bottom: 44px;
+    background-color: #1c1c1c;
+    border: 1px solid #3a3a3a;
+    border-radius: 5px;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+}
+
+.dropdownItem {
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdownItem:hover {
+    background-color: #333;
 }
