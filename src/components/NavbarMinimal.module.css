@@ -5,7 +5,9 @@
     flex-direction: column;
     background-color: #1c1c26;
     padding-top: 1rem;
-    position: relative;
+    position: fixed;
+    bottom: 0;
+    left: 0;
     cursor: pointer;
 }
 

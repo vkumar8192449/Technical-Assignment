@@ -1,0 +1,142 @@
+.homemaincontainer {
+    margin-left: rem(80px);
+    background-color: #17171e;
+    overflow-y: scroll;
+    width: 100vw;
+}
+
+.splitter {
+    margin-top: 4.2rem;
+}
+
+.homemaincontainer::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
+    text-align: center;
+    padding: 40px 20px;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.subheading {
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #bbb;
+    cursor: pointer;
+}
+
+.heading {
+    font-size: 36px;
+    margin-top: 10px;
+}
+
+.pitchheading {
+    font-size: 46px;
+    margin-top: 10px;
+}
+
+.description {
+    font-size: 22px;
+    color: #bbb;
+    margin-top: 10px;
+}
+
+.imageContainer {
+    margin-top: 30px;
+}
+
+.browseButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px solid #3e396e;
+    border-radius: 25px;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: fit-content;
+    font-weight: 500;
+}
+
+.browseButton:hover {
+    background-color: #2b2847;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+
+    .imageContainer {
+        margin-top: 20px;
+    }
+
+    .browseButton {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        font-size: 1.5rem;
+    }
+
+    .description {
+        font-size: 0.8rem;
+    }
+
+    .browseButton {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+.container2 {
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 60px;
+}
+
+.container2 h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.container2 div {
+    background-color: #1f1f28;
+    border-left: 3px solid #665dc3;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 1.3rem;
+    color: #d8d8e2;
+}
+
+.container2 ul {
+    margin-left: 2rem;
+}
+
+.hrtag {
+    border: 0.005rem solid #262633;
+}
