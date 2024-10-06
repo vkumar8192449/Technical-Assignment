@@ -44,9 +44,8 @@ export function NavbarMinimal() {
   const [active, setActive] = useState(0);
 
   const links = mockdata.map((link, index) => (
-    <Link href={link.url} style={{ textDecoration: "none" }}>
+    <Link key={link.label} href={link.url} style={{ textDecoration: "none" }}>
       <div
-        key={link.label}
         style={{
           marginBottom: "1rem",
           display: "flex",
@@ -95,9 +94,9 @@ export function NavbarMinimal() {
             fill="none"
             stroke="#fff"
             strokeWidth="1"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep"
             style={{ transform: "scale(-1, 1)" }}
           >
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
